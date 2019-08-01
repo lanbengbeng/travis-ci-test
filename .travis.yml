@@ -1,4 +1,27 @@
 language: python
 python:
-  - "2.7"
-  - "3.5"
+    - "3.5"
+    - "3.6"
+
+# install additonally required packages
+addons:
+    apt:
+        packages:
+            - cvs
+
+install:
+    - pip install PyYAML
+    - pip install codecov
+    - pip install schema
+    - pip install python-magic
+    - pip install pyparsing
+    - pip install Sphinx
+
+before_script:
+    - git clone https://github.com/BobBuildTool/bob.git
+    - cd bob 
+    - git checkout v0.15.0
+    - make 
+    - sudo make install
+script:
+    - bob --version   
