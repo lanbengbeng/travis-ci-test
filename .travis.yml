@@ -1,6 +1,5 @@
 language: python
 python:
-    - "3.5"
     - "3.6"
 
 # install additonally required packages
@@ -22,6 +21,7 @@ before_script:
     - cd bob 
     - git checkout v0.15.0
     - make 
+    - python3 --version
     - sudo make install
 script:
     - bob --version   
