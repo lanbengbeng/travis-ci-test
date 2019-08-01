@@ -16,10 +16,6 @@ install:
     - pip install python-magic
     - pip install pyparsing
     - pip install Sphinx
-    - git clone https://github.com/BobBuildTool/bob.git
-    - cd bob 
-    - git checkout v0.15.0
-    - make 
-    - make install
+    - python3 -m pip install BobBuildTool
 script:
     - bob --version   
